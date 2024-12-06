@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM_implementacion_EESA.Vista.Page3">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <Grid Margin="10,10,10,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Text="Dame un numero:" TextColor="White" Grid.ColumnSpan="2" Padding="0,25,0,0"/>
+                <Entry Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Placeholder="Aqui" Text="{Binding Numero1}" Keyboard="Numeric" PlaceholderColor="Azure" Grid.ColumnSpan="2" TextColor="Azure"/>
+
+                <Label Grid.Row="0" Grid.Column="2" Text="Dame Otro numero:" TextColor="White" Grid.ColumnSpan="2" Padding="0,25,0,0"/>
+                <Entry Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Placeholder="Aqui" Text="{Binding Numero2}" Keyboard="Numeric" PlaceholderColor="Azure" Grid.ColumnSpan="2" TextColor="Azure"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Suma" TextColor="White" HorizontalOptions="Center" Padding="0,25,0,0"/>
+                <RadioButton Grid.Row="3" Grid.Column="0" GroupName="multiplo" IsChecked="{Binding EsSuma}" BorderColor="Azure" CornerRadius="50" HorizontalOptions="Center" BackgroundColor="White"/>
+
+                <Label Grid.Row="2" Grid.Column="1" Text="Resta" TextColor="White" HorizontalOptions="Center" Padding="0,25,0,0"/>
+                <RadioButton Grid.Row="3" Grid.Column="1" GroupName="multiplo" IsChecked="{Binding EsResta}" BorderColor="Azure" CornerRadius="50" HorizontalOptions="Center" BackgroundColor="White"/>
+
+                <Label Grid.Row="2" Grid.Column="2" Text="Division" TextColor="White" HorizontalOptions="Center" Padding="0,25,0,0"/>
+                <RadioButton Grid.Row="3" Grid.Column="2" GroupName="multiplo" IsChecked="{Binding EsDivision}" BorderColor="Azure" CornerRadius="50" HorizontalOptions="Center" BackgroundColor="White"/>
+
+                <Label Grid.Row="2" Grid.Column="3" Text="Multiplicación" TextColor="White" HorizontalOptions="Center" Padding="0,25,0,0"/>
+                <RadioButton Grid.Row="3" Grid.Column="3" GroupName="multiplo" IsChecked="{Binding EsMultiplicacion}" BorderColor="Azure" CornerRadius="50" HorizontalOptions="Center" BackgroundColor="White"/>
+            </Grid>
+
+            <Frame BackgroundColor="White" Margin="100,0,100,0" CornerRadius="50">
+                <Entry IsEnabled="False" Placeholder="Resultado" FontSize="30" BackgroundColor="White" HorizontalOptions="Center" TextColor="Azure" HorizontalTextAlignment="Center" Text="{Binding Resultado}"/>
+            </Frame>
+
+            <Button Text="Enviar" Command="{Binding CalcularCommand}" Margin="90,40,90,0" CornerRadius="50" BackgroundColor="Gray" TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
